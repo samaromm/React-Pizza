@@ -1,15 +1,15 @@
 import React from "react"
 
-const Pizza = () => {
+const Pizza = (props) => {
+  
+  const isVeg = props.pizza.vegetarian ? "Yes" : "No"
   return(
-    <thead>
     <tr>
-      <th scope="col">Topping</th>
-      <th scope="col">Size</th>
-      <th scope="col">Vegetarian?</th>
-      <th scope="col">Edit</th>
+      <td>{props.pizza.topping}</td>
+      <td>{props.pizza.size}</td>
+      <td>{isVeg}</td>
+      <td><button type="button" id={props.id} onClick={props.handleClick} className="btn btn-primary">Edit Pizza</button></td>
     </tr>
-  </thead>
   )
 }
 

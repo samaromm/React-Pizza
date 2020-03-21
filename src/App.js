@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import Header from './components/Header'
-import PizzaForm from './components/PizzaForm'
-import PizzaList from './containers/PizzaList'
+import Header from './components/Header';
+import PizzaForm from './components/PizzaForm';
+import PizzaList from './containers/PizzaList';
 import data from './components/db.json';
 
 class App extends Component {
@@ -68,8 +68,8 @@ class App extends Component {
       <Fragment>
         <Header/>
         <PizzaForm topping={this.state.topping} size={this.state.size} vegetarian={this.state.vegetarian} forChange={this.forChange} submitClick={this.submitClick} handleOptionChange={this.handleOptionChange} handleSelect={this.handleSelect}/>
-        {this.state.dataCopy.map((pizza) =><PizzaList handleClick={this.handleClick} id={pizza.id} topping={pizza.topping} size={pizza.size} vegetarian={pizza.vegetarian} />)}
-        {console.log(this.state.dataCopy)}
+        <PizzaList handleClick={this.handleClick} pizzas={this.state.dataCopy} />
+        {/*console.log(this.state.dataCopy)*/}
       </Fragment>
     );
   }
